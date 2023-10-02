@@ -1,225 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HelpMeOut</title>
-    <style>
-        body{
-            width: 270px;
-            height: 400px;
-            background: #fff;
-        }
-        button{
-            width: 50%;
-            margin: auto;
-            background-color: blue;
-            color: white;
-        }
-
-       
-.toggle {
-    position: relative;
-    width: 60px;
-    height: 30px;
-}
-
-.toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#toggle-switch {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.toggle-label::before {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    background-color: #fff; 
-    border-radius: 50%;
-    left: 3px;
-    top: 3px;
-    transition: transform 0.3s ease;
-    transform: translateX(0);
-}
-
-#toggle-switch:checked + .toggle-label {
-    background-color: #120B48; 
-}
-
-#toggle-switch:checked + .toggle-label::before {
-    transform: translateX(30px); 
-}
-
-.div-body{
-    display: flex;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-}
-
-    </style>
-</head>
-<body>
-    <main>
-        <h2>Hello there!</h2>
-        <p>This HelpMeOut version was created by henryuks</p>
-        <div>
-            <button id="start-video">Start recording</button>
-            <button id="end-video">End recording</button>
-        </div>
-
-
-        <!-- <div class="div-body">
-            <button id="show-timestamp">Show Timestamp</button>
-<button id="pause-resume">Pause</button>
-<button id="access-camera">Access Camera</button>
-<button id="mute-microphone">Mute Microphone</button>
-<button id="delete-video">Delete Video</button>
-        </div> -->
-
-
-    </main>
-
-    <script src="./popup.js"></script>
-    <!-- <script src="./toggle.js"></script> -->
-
-</body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HelpMeOut</title>
-    <style>
-      body {
-        width: 270px;
-        height: 400px;
-        background: #fff;
-      }
-
-      .first-toggle , .second-toggle{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: between;
-      }
-
-      .toggle {
-        position: relative;
-        width: 60px;
-        height: 30px;
-      }
-
-      .toggle-label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        border-radius: 30px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .toggle-button {
-        width: 50%;
-        margin: auto;
-        background-color: blue;
-        color: white;
-      }
-
-      #start-video-label::before,
-      #end-video-label::before {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        background-color: #fff;
-        border-radius: 50%;
-        left: 3px;
-        top: 3px;
-        transition: transform 0.3s ease;
-        transform: translateX(0);
-      }
-
-      #start-video-label::before {
-        background-color: #fff; 
-      }
-
-      #end-video-label::before {
-        background-color: #fff; 
-      }
-
-      #start-video-switch:checked + .toggle-label {
-        background-color: #120b48; 
-      }
-
-      #end-video-switch:checked + .toggle-label {
-        background-color: #120b48;
-      }
-
-      #start-video-switch:checked + .toggle-label::before {
-        transform: translateX(30px);
-      }
-
-      #end-video-switch:checked + .toggle-label::before {
-        transform: translateX(30px); 
-      }
-    </style>
+    <link rel="stylesheet" href="popup.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <main>
-      <h2>Hello there!</h2>
-      <p>This HelpMeOut version was created by henryuks</p>
-      <div>
-        <div class="first-toggle">
-          <p>start recording</p>
-          <div>
-            <input type="checkbox" id="start-video-switch" class="toggle" />
-          <label
-            for="start-video-switch"
-            class="toggle-label"
-            id="start-video-label"
-          ></label>
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="./assests/iCON 7 1.svg" alt="" class="popup-logo" />
+            <p class="pt-2 popup-logo-header">HelpMeOut</p>
+          </div>
+          <div class="d-flex gap-3">
+            <img src="./assests/setting-2.svg" alt="" class="popup-setting" />
+            <img src="./assests/close-circle.svg" alt="" class="popup-exit" />
           </div>
         </div>
-        <div class="second-toggle">
-          <p>stop recording</p>
+        <div>
+          <p class="popup-text text-center">
+            This extension helps you record and share help videos with ease.
+          </p>
+        </div>
+        <div class="popup-image">
           <div>
-            <input type="checkbox" id="end-video-switch" class="toggle1" />
-          <label
-            for="end-video-switch"
-            class="toggle-label"
-            id="end-video-label"
-          ></label>
+            <img src="./assests/monitor.svg" alt="" class="popup-images"/>
+            <p class="popup-image-text-1 text-center">Full Screen</p>
+          </div>
+          <div>
+            <img src="./assests/copy.svg" alt="" class="popup-images"/>
+            <p class="popup-image-text-2 text-center">Current Tab</p>
           </div>
         </div>
+        <div>
+            <div class="popup-toggle">
+              <div class="d-flex gap-2 align-items-center pt-3">
+                <img src="./assests/video-camera.svg" alt="" />
+                <p class="popup-toggle-text">Camera</p>
+              </div>
+              <div class="popup-toggle-body">
+                <div class="button-toggle">
+                    <input type="checkbox" id="microphone">
+                <label for="check" class="button-body"></label>
+                </div>
+              </div>
+            </div>
+            <div class="popup-toggle">
+              <div class="d-flex gap-2 align-items-center pt-3">
+                <img src="./assests/microphone.svg" alt="" />
+                <p class="popup-toggle-text">Audio</p>
+              </div>
+              <div class="popup-toggle-body">
+                <div class="button-toggle">
+                    <input type="checkbox" id="microphone">
+                <label for="check" class="button-body"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div>
+          <button id="start-video" class="mt-2">Start recording</button>
+          <button id="end-video" class="mt-2">End recording</button>
+        </div>
       </div>
-      <div>
-        <button id="start-video" class="toggle-button">Start recording</button>
-        <button id="end-video" class="toggle-button" style="display: none">
-          End recording
-        </button>
-      </div>
-    </main>
 
     <script src="./popup.js"></script>
+    <script src="./toggle.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </body>
-</html> -->
+</html>
+

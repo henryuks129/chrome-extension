@@ -1,38 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const recording = document.querySelector("button#start-video");
-    const endRecording = document.querySelector("button#end-video");
-    let isRecording = false;
-  
-    function startRecording() {
-      isRecording = true;
-      recording.style.display = "none";
-      endRecording.style.display = "block";
-  
-      // ... Code for starting recording ...
-    }
-  
-    function stopRecording() {
-      isRecording = false;
-      recording.style.display = "block";
-      endRecording.style.display = "none";
-  
-      // ... Code for stopping recording ...
-    }
-  
-    function toggleRecording() {
-      if (isRecording) {
-        stopRecording();
-      } else {
-        startRecording();
-      }
-    }
-  
-    recording.addEventListener("click", () => {
-      toggleRecording();
-    });
-  
-    endRecording.addEventListener("click", () => {
-      toggleRecording();
-    });
-  });
-  
+// Get the checkbox elements
+// const toggleVideo = document.getElementById('toggle-video');
+// const toggleMicrophone = document.getElementById('toggle-microphone');
+
+// function handleToggleChange(event) {
+//     const target = event.target;
+    
+//     if (target === toggleVideo) {
+//         if (target.checked) {
+//             console.log('Video enabled');
+//         } else {
+//             console.log('Video disabled');
+//         }
+//     } else if (target === toggleMicrophone) {
+//         if (target.checked) {
+//             console.log('Microphone enabled');
+//         } else {
+//             console.log('Microphone disabled');
+//         }
+//     }
+// }
+
+// toggleVideo.addEventListener('change', handleToggleChange);
+// toggleMicrophone.addEventListener('change', handleToggleChange);
+
+
+
+
+
